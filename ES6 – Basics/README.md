@@ -11,15 +11,15 @@ JavaScript-এর বিভিন্ন version বা feature development এ�
 
 উদাহরণ:
 
-| Version | Year |
-|---|---:|
-| **ES1** | 1997 |
-| **ES2** | 1998 |
-| **ES3** | 1999 |
-| **ES4** | — |
-| **ES5** | 2009 |
-| **ES5.1** | 2011 |
-| **ES6** | 2015 |
+| Version | Year | Description |
+|---|---:|---|
+| **ES1** | 1997 | First ECMAScript edition |
+| **ES2** | 1998 | Minor specification updates |
+| **ES3** | 1999 | Added important language features |
+| **ES4** | — | Planned but never finalized |
+| **ES5** | 2009 | Major language improvements |
+| **ES5.1** | 2011 | Minor revision of ES5 |
+| **ES6** | 2015 | Introduced many modern JavaScript features |
 
 বর্তমানে JavaScript-এর modern features ECMAScript standard-এর মাধ্যমে নিয়মিত update করা হয়।
 
@@ -155,7 +155,7 @@ price = 150;
 
 
 
-## 📝 Notes ( Details )
+## 📝 Notes ( ES6 Core — Details )
 
 <details>
 
@@ -312,7 +312,471 @@ const fullName = `My name is ${firstName} ${lastName}`;
 console.log(fullName);
 ```
 
-</details>
+</details><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<details>
+
+<summary>📝 Arrow Function — Short Syntax</summary>
+
+### 📖 Overview
+
+**Arrow Function (`=>`)** হলো JavaScript-এ function লেখার একটি সংক্ষিপ্ত ও সহজ syntax। এটি মূলত function expression-এর shorter form হিসেবে ব্যবহার করা হয়। একটি মাত্র expression থাকলে `{}` এবং `return` না লিখেও value automatically return করা যায়। একাধিক expression থাকলে `{}` ব্যবহার করে প্রয়োজনীয় value ফেরত দিতে `return` লিখতে হয়।
+
+### 📌 Syntax
+
+```javascript
+const functionName = (parameters) => expression;
+```
+</details><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<details>
+
+<summary>📝 Spread Operator (...) — Array & Object</summary>
+
+### 📖 Overview
+
+**Spread Operator (`...`)** হলো JavaScript-এর একটি operator, যা কোনো **Array বা Object-এর elements/properties-কে ছড়িয়ে দিতে** ব্যবহার করা হয়। এটি সাধারণত **array/object copy, merge এবং নতুন value যোগ করার** ক্ষেত্রে ব্যবহার করা হয়।
+
+### 📌 Key Points
+
+- `...` দিয়ে Array-এর elements ছড়িয়ে দেওয়া যায়।
+- `...` দিয়ে Object-এর properties ছড়িয়ে দেওয়া যায়।
+- Array বা Object-এর **copy তৈরি** করতে ব্যবহার করা যায়।
+- একাধিক Array বা Object **merge** করতে ব্যবহার করা যায়।
+- Function-এ Array-এর values **arguments হিসেবে পাঠাতে** ব্যবহার করা যায়।
+- Spread ব্যবহার করে copy করলে **আলাদা reference** তৈরি হয়।
+
+### 💡 Array-এর Values Spread করা
+
+```javascript
+const numbers = [3, 5, 35, 30, 5, 10];
+
+const maximum = Math.max(...numbers);
+console.log(maximum);  // 35
+```
+
+</details> <br>
+
+
+
+
+
+
+
+
+
+
+
+<details>
+
+<summary>📝 ES6 Destructuring — Object & Array</summary>
+
+### 📖 Overview
+
+**ES6 Destructuring** হলো JavaScript-এর একটি feature, যার মাধ্যমে **Object ও Array থেকে value সরাসরি variable-এ নেওয়া যায়**। Object Destructuring-এ property name ব্যবহার করে value নেওয়া হয়, আর Array Destructuring-এ **position অনুযায়ী** value নেওয়া হয়। এর ফলে code আরও clean হয় এবং বারবার `object.property` বা array index ব্যবহার করতে হয় না।
+
+### 📌 Key Points
+
+- **Object Destructuring**-এ `{ }` ব্যবহার করা হয়।
+- Object-এর **property name** ব্যবহার করে value নেওয়া যায়।
+- **Array Destructuring**-এ `[ ]` ব্যবহার করা হয়।
+- Array-তে **position অনুযায়ী** value নেওয়া হয়।
+- `...rest` ব্যবহার করে Object বা Array-এর **বাকি values** একসাথে নেওয়া যায়।
+
+### 💡 Object Destructuring Example
+
+```javascript
+const student = {
+  name: "Bayjid",
+  age: 20,
+  city: "Mymensingh"
+};
+
+const { name, age } = student;
+console.log(name, age);   // Bayjid 20
+```
+
+
+
+```
+const student = {
+  name: "Bayjid",
+  age: 20,
+  city: "Mymensingh",
+  course: "CST"
+};
+
+const { name, ...otherInfo } = student;
+console.log(name);  // Bayjid
+console.log(otherInfo);  // { age: 20, city: "Mymensingh", course: "CST" }
+
+```
+
+
+
+
+### 💡 Array Destructuring Example
+
+```
+const numbers = [10, 20, 30, 40, 50];
+const [numOne, numTwo, ...remaining] = numbers;
+
+console.log(numOne, numTwo);   // 10 20
+console.log(remaining);  // [30, 40, 50]
+```
+
+</details><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<details>
+
+<summary>📝 Object Methods — Keys, Values & Entries</summary>
+
+### 📖 Overview
+
+JavaScript-এ Object-এর **key/property, values এবং key-value pairs** পাওয়ার জন্য `Object.keys()`, `Object.values()` এবং `Object.entries()` ব্যবহার করা হয়। `Object.keys()` সব property name একটি array হিসেবে দেয়, `Object.values()` সব value একটি array হিসেবে দেয় এবং `Object.entries()` প্রতিটি key ও value-কে `[key, value]` pair হিসেবে একটি 2D array-এর মধ্যে দেয়।
+
+### 📌 Object.keys()
+
+Object-এর শুধুমাত্র **keys/property names** একটি array হিসেবে পাওয়া যায়।
+
+```javascript
+const king = {
+  name: "John Doe",
+  age: 55,
+  kingdom: "Pride Lands",
+  title: "The Lion King"
+};
+
+const keys = Object.keys(king);
+
+console.log(keys);
+// [ "name", "age", "kingdom", "title" ]
+```
+
+</details><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<details>
+
+<summary>📝 Object Freeze, Seal & Delete</summary>
+
+### 📖 Overview
+
+JavaScript-এ Object-এর property **modify, add বা delete** নিয়ন্ত্রণ করার জন্য `Object.freeze()` এবং `Object.seal()` ব্যবহার করা হয়। আর নির্দিষ্ট property delete করার জন্য `delete` operator ব্যবহার করা হয়।
+
+### 📌 Object.freeze()
+
+`Object.freeze()` করলে কোনো property **modify, add বা delete** করা যায় না।
+
+```javascript
+const king = {
+  name: "John Doe",
+  age: 55
+};
+
+Object.freeze(king);
+
+king.name = "Simba";
+king.queen = "Sarabi";
+delete king.age;
+
+console.log(king);
+// { name: "John Doe", age: 55 }
+```
+
+### 📌 Object.seal()
+
+- Object.seal() করলে existing property modify করা যায়, কিন্তু নতুন property add বা property delete করা যায় না।
+
+```javascript
+const king = {
+  name: "John Doe",
+  age: 55
+};
+
+Object.seal(king);
+
+king.name = "Simba";
+king.queen = "Sarabi";
+delete king.age;
+
+console.log(king);
+// { name: "Simba", age: 55 }
+```
+
+
+### 📌 delete Operator
+
+- delete operator ব্যবহার করে Object-এর নির্দিষ্ট property delete করা যায়।
+
+
+```javascript
+const king = {
+  name: "John Doe",
+  age: 55
+};
+
+delete king.age;
+
+console.log(king);
+// { name: "John Doe" }
+```
+
+</details><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<details>
+
+<summary>📝 Dot Notation & Bracket Notation</summary>
+
+### 📖 Overview
+
+**Dot Notation (`.`)** হলো Object-এর property-কে **dot চিহ্নের মাধ্যমে সরাসরি access করার পদ্ধতি**। এতে Object-এর নামের পরে `.` দিয়ে property name লিখতে হয়।
+
+**Bracket Notation (`[]`)** হলো Object-এর property-কে **square bracket-এর মাধ্যমে access করার পদ্ধতি**। এতে property name সাধারণত quotation-এর মধ্যে লেখা হয় এবং property name-এ **hyphen, space বা special character** থাকলেও access করা যায়।
+
+### 💡 Example
+
+```javascript
+const employee = {
+  name: "John Doe",
+  age: 35,
+  position: "Manager",
+  "home-address": "123 BM9",
+  department: "HR",
+  salary: 50000
+};
+
+// Dot Notation
+console.log(employee.name);
+// console.log(employee.home-address); // Error
+console.log(employee.salary);
+
+// Bracket Notation
+console.log(employee["position"]);
+console.log(employee["home-address"]);
+
+console.log(employee[2]); // undefined
+
+const money = employee["salary"];
+
+const key = "position";
+console.log(employee[key]);
+```
+
+### 📌 Key Points
+- object.property → Dot Notation
+- object["property"] → Bracket Notation
+- Hyphen বা space থাকা property-এর জন্য Bracket Notation ব্যবহার করতে হয়।
+- Bracket Notation-এ variable দিয়েও property access করা যায়।
+- Object-এ না থাকা property access করলে undefined পাওয়া যায়।
+
+
+</details><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<details>
+
+<summary>📝 Optional Chaining (?.)</summary>
+
+### 📖 Overview
+
+**Optional Chaining (`?.`)** হলো JavaScript-এর এমন একটি feature, যার মাধ্যমে কোনো property বা nested property access করার সময় মাঝখানে কোনো value `null` বা `undefined` হলে error না দিয়ে `undefined` return করা যায়। এর ফলে কোনো property না থাকলেও safely value check করা যায়।
+
+### 💡 Example
+
+```javascript
+const employee = {
+  name: "John Doe",
+  age: 35,
+  position: "Manager",
+  family: {
+    father: "Richard Doe",
+    mother: {
+      name: "Jane Doe",
+      age: 55
+    }
+  },
+  "home-address": "123 BM9",
+  department: "HR",
+  salary: 50000
+};
+
+// Without Optional Chaining
+// console.log(employee.family.grandfather.age); // Error
+
+// Using Optional Chaining
+console.log(employee.family?.grandfather?.age); // undefined
+```
+
+### 📌 Key Points
+- ?. → Optional Chaining Operator
+- Missing property থাকলে Error না দিয়ে undefined return করে।
+- Nested object-এর property safely access করতে ব্যবহার করা হয়।
+- null বা undefined value-এর ক্ষেত্রে useful।
+
+</details><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<details>
+
+<summary>📝 Object Looping — for...in</summary>
+
+### 📖 Overview
+
+**Object Looping** হলো JavaScript-এ কোনো Object-এর **property এবং value একে একে access বা iterate** করার পদ্ধতি। Object-এর data নিয়ে কাজ করার জন্য সাধারণত `for...in`, `Object.keys()`, `Object.values()` এবং `Object.entries()` ব্যবহার করা হয়।
+
+→ Array — `for...of`  
+→ Object — `for...in`
+
+### 💡 Array — for...of
+
+`for...of` loop ব্যবহার করে Array-এর **প্রতিটি value** একে একে পাওয়া যায়।
+
+```javascript
+const numbers = [1, 2, 3, 4, 5, 6];
+
+for (const number of numbers) {
+  console.log(number);
+}
+```
+
+--- 
+
+<br>
+
+### 💡 Object — for...in
+
+for...in loop ব্যবহার করে Object-এর প্রতিটি key একে একে পাওয়া যায়। এরপর bracket notation ব্যবহার করে সেই key-এর value access করা যায়।
+
+```javascript
+const employee = {
+  name: "John Doe",
+  age: 35,
+  position: "Manager",
+  "home-address": "123 BM9",
+  department: "HR",
+  salary: 50000
+};
+
+for (const key in employee) {
+  const value = employee[key];
+  console.log(key, "→", value);
+}
+📌 Output
+name → John Doe
+age → 35
+position → Manager
+home-address → 123 BM9
+department → HR
+salary → 50000
+```
+
+
+</details> 
+
+
 
 
 

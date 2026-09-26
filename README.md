@@ -43,7 +43,7 @@ ECMAScript-এর **6th edition**, যার official নাম **ECMAScript 201
 
 ---
 
-## 📚 Learning Progress
+### 📚 Learning Progress
 
 > 📌 **ES6 Basics:** Module 26
 
@@ -54,26 +54,26 @@ ECMAScript-এর **6th edition**, যার official নাম **ECMAScript 201
 
 
 
-## 📁 Repository সম্পর্কে
+### 📁 Repository সম্পর্কে
 
 <details>
 <summary>🔍 এই Repository-তে কী আছে?</summary>
 
-### 📌 ES6 Basics
+#### 📌 ES6 Basics
 
-ES6-এর fundamental concepts, syntax এবং commonly used features নিয়ে notes ও practical examples রয়েছে।
+- ES6-এর fundamental concepts, syntax এবং commonly used features নিয়ে notes ও practical examples রয়েছে।
 
-### 📌 ES6 Advanced
+#### 📌 ES6 Advanced
 
-ES6-এর আরও advanced concepts নিয়ে detailed learning materials এবং practical examples রয়েছে।
+- ES6-এর আরও advanced concepts নিয়ে detailed learning materials এবং practical examples রয়েছে।
 
-### 📝 Notes
+#### 📝 Notes
 
-প্রতিটি topic সহজভাবে বোঝার জন্য প্রয়োজনীয় explanations, key points এবং notes রাখা হয়েছে।
+- প্রতিটি topic সহজভাবে বোঝার জন্য প্রয়োজনীয় explanations, key points এবং notes রাখা হয়েছে।
 
-### 💻 Practical Examples
+#### 💻 Practical Examples
 
-শেখা concepts-গুলো বাস্তবে প্রয়োগ করার জন্য বিভিন্ন JavaScript examples ও practice code রয়েছে।
+- শেখা concepts-গুলো বাস্তবে প্রয়োগ করার জন্য বিভিন্ন JavaScript examples ও practice code রয়েছে।
 
 </details>
 
